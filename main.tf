@@ -53,7 +53,7 @@ module "alb" {
 
   vpc_id         = "module.web_vpc.vpc_id"
   subnets        = module.web_vpc.public_subnets
-  security_group = module.web_sg.security_group_id
+  security_groups = module.web_sg.security_group_id
 
   listeners = {
     ex-http-https-redirect = {
