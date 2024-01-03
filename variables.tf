@@ -11,21 +11,15 @@ variable "ami_filter" {
     owner = string
   })
 
-  default = {
-    name   = "bitnami-tomcat-*-x86_64-hvm-ebs-nami"
-    owners = "979382823631" # Bitnami
+default = {
+  name   = "bitnami-tomcat-*-x86_64-hvm-ebs-nami"
+  owners = "979382823631" # Bitnami
   }
-}
-
-
-
-resource "aws_instance" "web" {
-  ami           = data.aws_ami.app_ami.id
-  instance_type = "t3.nano"
 }
 
 variable "environment" {
   description = "Development Environment"
+
   type = object ({
     name = string
     network_prefix = string
