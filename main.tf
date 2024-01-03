@@ -83,6 +83,10 @@ module "alb" {
       port             = 80
       target_type      = "instance"
     }
+    my_target = {
+      target_id = aws_instance.web.id
+      port = 80
+    }
   }
 
   tags = {
