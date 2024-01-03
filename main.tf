@@ -41,8 +41,6 @@ module "web_autoscaling" {
 
   name = "$(var.environment.name)-web"
 
-  min_size            = var.min_size
-  max_size            = var.max_size
   vpc_zone_identifier = module.web_vpc.public_subnets
   target_group_arns   = module.web_alb.target_group_arns
   security_groups     = [module.web_sg.security_group_id]

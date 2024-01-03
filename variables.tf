@@ -30,11 +30,3 @@ variable "environment" {
     network_prefix = "10.0"
   }
 }
-
-variable "min_size {
-  default = 1
-}
-
-variable "max_size {
-  default = 2
-}
