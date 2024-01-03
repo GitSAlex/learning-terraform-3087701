@@ -27,13 +27,13 @@ variable "environment" {
 
   default = {
     name           = "dev"
-    network_prefix = "10.0
+    network_prefix = "10.0"
   }
 }
 
 variable "asg_min_size {
   description = "Min nr of inst in ASG"
-  default = 1 
+  default = 1
 }
 
 variable "asg_max_size {
