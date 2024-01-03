@@ -10,12 +10,14 @@ variable "ami_filter" {
     name  = string
     owner = string
   })
-}
 
   default = {
-  name   = "bitnami-tomcat-*-x86_64-hvm-ebs-nami"
-  owners = "979382823631" # Bitnami
+    name   = "bitnami-tomcat-*-x86_64-hvm-ebs-nami"
+    owners = "979382823631" # Bitnami
+  }
 }
+
+
 
 resource "aws_instance" "web" {
   ami           = data.aws_ami.app_ami.id
@@ -35,12 +37,12 @@ default = {
   }
 }
 
-variable "asg_min_size{
+variable "asg_min_size {
   description = "Min nr of inst in ASG"
   default = 1 
 }
 
-variable "asg_max_size{
+variable "asg_max_size {
   description = "Max nr of inst in ASG"
   default = 2
 }
